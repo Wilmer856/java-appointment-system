@@ -1,6 +1,0 @@
-module:Main
-controller
-databaseAccess
-databaseConnection
-Main
-model
