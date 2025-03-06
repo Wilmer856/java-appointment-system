@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controller.AddAppointment">
+   <children>
+      <VBox prefHeight="700.0" prefWidth="900.0">
+         <children>
+            <HBox maxHeight="-Infinity" prefHeight="65.0" prefWidth="840.0" spacing="500.0">
+               <children>
+                  <Label prefHeight="27.0" prefWidth="173.0" text="Add Appointment">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <VBox prefHeight="40.0" prefWidth="160.0">
+                     <children>
+                        <Label fx:id="currentUserLbl" text="Current User: " textFill="#3467ff" />
+                        <Label fx:id="zoneIdLbl" text="ZoneID: " textFill="#3467ff" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <VBox prefHeight="347.0" prefWidth="837.0" spacing="15.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="25.0" prefWidth="840.0" spacing="20.0">
+                     <children>
+                        <Label maxWidth="-Infinity" prefWidth="70.0" text="User ID:" />
+                        <TextField fx:id="userIdTxt" disable="true" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="25.0" prefWidth="840.0" spacing="20.0">
+                     <children>
+                        <Label maxWidth="-Infinity" prefWidth="70.0" text="Customer ID:" />
+                        <TextField fx:id="customerIdTxt" disable="true" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="25.0" prefWidth="840.0" spacing="20.0">
+                     <children>
+                        <Label maxWidth="-Infinity" prefWidth="70.0" text="Title" />
+                        <TextField fx:id="titleTxt" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="19.0" prefWidth="840.0" spacing="20.0">
+                     <children>
+                        <Label maxWidth="-Infinity" prefWidth="70.0" text="Description:" />
+                        <TextField fx:id="descriptionTxt" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="18.0" prefWidth="840.0" spacing="20.0">
+                     <children>
+                        <Label maxWidth="-Infinity" prefWidth="70.0" text="Location:" />
+                        <ComboBox fx:id="countryDropdown" onAction="#onCountryDropDownClick" prefWidth="150.0" />
+                        <ComboBox fx:id="stateDropdown" prefWidth="150.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="21.0" prefWidth="840.0" spacing="20.0">
+                     <children>
+                        <Label maxWidth="-Infinity" prefWidth="70.0" text="Contact:" />
+                        <ComboBox fx:id="contactDropdown" prefWidth="150.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="15.0" prefWidth="840.0" spacing="20.0">
+                     <children>
+                        <Label maxWidth="-Infinity" prefWidth="70.0" text="Type" />
+                        <ComboBox fx:id="typeDropdown" prefWidth="150.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="4.0" prefWidth="840.0" spacing="20.0">
+                     <children>
+                        <Label maxWidth="-Infinity" prefWidth="70.0" text="Start Time:" />
+                        <DatePicker fx:id="startDatePicker" />
+                        <HBox alignment="CENTER_LEFT" prefHeight="25.0" prefWidth="301.0" spacing="10.0">
+                           <children>
+                              <Label prefHeight="17.0" prefWidth="20.0" text="HH:" />
+                              <ComboBox fx:id="startHourDropdown" maxWidth="-Infinity" prefHeight="25.0" prefWidth="55.0" />
+                              <Label text="MM:" />
+                              <ComboBox fx:id="startMinuteDropdown" maxWidth="-Infinity" prefHeight="25.0" prefWidth="55.0" />
+                              <Label text="SS:" />
+                              <ComboBox fx:id="startSecondsDropdown" maxWidth="-Infinity" prefHeight="25.0" prefWidth="55.0" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="4.0" prefWidth="840.0" spacing="20.0">
+                     <children>
+                        <Label maxWidth="-Infinity" prefWidth="70.0" text="End Time:">
+                           <HBox.margin>
+                              <Insets right="193.0" />
+                           </HBox.margin></Label>
+                        <HBox alignment="CENTER_LEFT" prefHeight="25.0" prefWidth="301.0" spacing="10.0">
+                           <children>
+                              <Label prefHeight="17.0" prefWidth="20.0" text="HH:" />
+                              <ComboBox fx:id="endHourDropdown" maxWidth="-Infinity" prefHeight="25.0" prefWidth="55.0" />
+                              <Label text="MM:" />
+                              <ComboBox fx:id="endMinuteDropdown" maxWidth="-Infinity" prefHeight="25.0" prefWidth="55.0" />
+                              <Label text="SS:" />
+                              <ComboBox fx:id="endSecondsDropdown" maxWidth="-Infinity" prefHeight="25.0" prefWidth="55.0" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="23.0" prefWidth="840.0" spacing="20.0">
+                     <children>
+                        <Button maxWidth="-Infinity" mnemonicParsing="false" onAction="#onSaveBtnClick" prefWidth="75.0" text="Save" />
+                        <Button maxWidth="-Infinity" mnemonicParsing="false" onAction="#onCancelBtnClick" prefWidth="75.0" text="Cancel" />
+                     </children>
+                     <padding>
+                        <Insets left="63.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>
